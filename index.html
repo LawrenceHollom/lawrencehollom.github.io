@@ -18,100 +18,73 @@ I recently completed my PhD at the University of Cambridge, supervised by Be&#76
 My research interests cover a range of extremal, probabilistic, infinitary, and geometric combinatorics.
 
 <!--
-  -  Insert papers below here!
+  -  Papers are stored in papers.js -- edit that file to add or update papers.
 --->
 
 <h2>Preprints</h2>
-<ul>
-	<li>
-		<a href="https://arxiv.org/abs/2605.20184">Hypercube geodesics with few colour changes</a>.<br />
-		2026. 	</li>
-	<li>
-		<a href="https://arxiv.org/abs/2601.18789">Uniformly balanced $H$-factors in multicoloured complete graphs</a>.<br />
-		2026. With A. Banerjee.<br />
-	</li>
-	<li>
-		<a href="https://arxiv.org/abs/2510.05044">Reverse Littlewood--Offord problems with parity conditions</a>.<br />
-		2025. With G. B. Sorkin.<br />
-	</li>
-	<li>
-		<a href="https://arxiv.org/abs/2508.15698">Connecting hypercube 1-factors</a>.<br />
-		2025. With B. Randall Shaw.<br />
-	</li>
-	<li>
-		<a href="https://arxiv.org/abs/2506.23970">Approximate Itai-Zehavi conjecture for random graphs</a>.<br />
-		2025. With L. Lichev, A. Mond, J. Portier, and Y. Wang.<br />
-	</li>
-	<li>
-		<a href="https://arxiv.org/abs/2505.22875">Monotonicity and decompositions of random regular graphs</a>.<br />
-		2025. With L. Lichev, A. Mond, J. Portier, and Y. Wang.<br />
-		Annals of Applied Probability, accepted.
-	</li>
-	<li>
-		<a href="https://arxiv.org/abs/2411.16844">The Aharoni--Korman conjecture is false</a>.<br />
-		2025. 		Israel Journal of Mathematics, accepted.
-	</li>
-	<li>
-		<a href="https://arxiv.org/abs/2412.04170">A note on high-dimensional discrepancy of subtrees</a>.<br />
-		2024. With L. Lichev, A. Mond, and J. Portier.<br />
-		Discrete & Computational Geometry, accepted.
-	</li>
-	<li>
-		<a href="https://arxiv.org/abs/2410.17034">Discrepancies of spanning trees in dense graphs</a>.<br />
-		2024. With L. Lichev, A. Mond, and J. Portier.<br />
-	</li>
-	<li>
-		<a href="https://arxiv.org/abs/2410.06148">Almost colour-balanced spanning forests in complete graphs</a>.<br />
-		2024. With A. Mond and J. Portier.<br />
-	</li>
-</ul>
+<ul id="preprints"></ul>
 <h2>Publications</h2>
-<ul>
-	<li>
-		<a href="https://www.combinatorics.org/ojs/index.php/eljc/article/view/v33i2p11">Counterexamples to conjectures on strong maximality and minimality</a>.<br />
-		With B. Randall Shaw.<br />
-Electronic Journal of Combinatorics, 2026.<br />
-	</li>
-	<li>
-		<a href="http://dx.doi.org/10.1002/rsa.70070">Finding a long cycle in a percolated vertex expander graph</a>.<br />
-		Random Structures & Algorithms, 2026.<br />
-	</li>
-	<li>
-		<a href="https://doi.org/10.1112/jlms.70539">Double-jump phase transition for the reverse Littlewood--Offord problem</a>.<br />
-		With J. Portier and V. Souza.<br />
-Journal of the London Mathematical Society, 2026.<br />
-	</li>
-	<li>
-		<a href="https://www.combinatorics.org/ojs/index.php/eljc/article/view/v32i4p50">A uniform bound on almost colour-balanced perfect matchings in colour-balanced complete graphs  </a>.<br />
-		Electronic Journal of Combinatorics, 2025.<br />
-	</li>
-	<li>
-		<a href="https://www.sciencedirect.com/science/article/pii/S0195669825000733">The bunkbed conjecture is not robust to generalisation</a>.<br />
-		European Journal of Combinatorics, 2025.<br />
-	</li>
-	<li>
-		<a href="https://www.sciencedirect.com/science/article/pii/S0012365X24004023">On graphs with maximum difference between game chromatic number and chromatic number</a>.<br />
-		Discrete Mathematics, 2025.<br />
-	</li>
-	<li>
-		<a href="https://www.sciencedirect.com/science/article/pii/S0166218X24000209">On monotonicity in Maker-Breaker graph colouring games</a>.<br />
-		Discrete Applied Mathematics, 2024.<br />
-	</li>
-	<li>
-		<a href="https://onlinelibrary.wiley.com/doi/10.1002/rsa.70024">Tight Anti-Concentration of Rademacher Sums</a>.<br />
-		With J. Portier.<br />
-Random Structures & Algorithms, 2025.<br />
-	</li>
-	<li>
-		<a href="https://www.sciencedirect.com/science/article/pii/S0195669824000416">A note on interval colourings of graphs</a>.<br />
-		With M. Axenovich, A. Girão, J. Portier, E. Powierski, M. Savery, Y. Tamitegama, and L. Versteegen.<br />
-European Journal of Combinatorics, 2024.<br />
-	</li>
-	<li>
-		<a href="https://www.sciencedirect.com/science/article/pii/S0012365X23003977">A new proof of the bunkbed conjecture in the $p\uparrow 1$ limit</a>.<br />
-		Discrete Mathematics, 2024.<br />
-	</li>
-</ul>
+<ul id="publications"></ul>
+
+<script src="papers.js"></script>
+<script>
+  // Format a list of co-author names with the Oxford comma convention.
+  function formatAuthors(names) {
+    if (!names || names.length === 0) return "";
+    if (names.length === 1) return names[0];
+    if (names.length === 2) return names[0] + " and " + names[1];
+    return names.slice(0, -1).join(", ") + ", and " + names[names.length - 1];
+  }
+
+  function makeLink(paper) {
+    var a = document.createElement("a");
+    a.href = paper.url;
+    a.textContent = paper.title;
+    return a;
+  }
+
+  // Preprints: title, then "<year>. With <authors>. <publication>."
+  function renderPreprint(paper) {
+    var li = document.createElement("li");
+    li.appendChild(makeLink(paper));
+    li.appendChild(document.createTextNode("."));
+    li.appendChild(document.createElement("br"));
+
+    var line = paper.date + ".";
+    if (paper.collaborators && paper.collaborators.length) {
+      line += " With " + formatAuthors(paper.collaborators) + ".";
+    }
+    if (paper.publication) {
+      line += " " + paper.publication + ".";
+    }
+    li.appendChild(document.createTextNode(line));
+    return li;
+  }
+
+  // Publications: title, then "With <authors>." then "<venue>, <year>."
+  function renderPublication(paper) {
+    var li = document.createElement("li");
+    li.appendChild(makeLink(paper));
+    li.appendChild(document.createTextNode("."));
+    li.appendChild(document.createElement("br"));
+
+    if (paper.collaborators && paper.collaborators.length) {
+      li.appendChild(document.createTextNode("With " + formatAuthors(paper.collaborators) + "."));
+      li.appendChild(document.createElement("br"));
+    }
+    var venue = paper.publication ? paper.publication + ", " + paper.date + "." : paper.date + ".";
+    li.appendChild(document.createTextNode(venue));
+    li.appendChild(document.createElement("br"));
+    return li;
+  }
+
+  (function () {
+    var pre = document.getElementById("preprints");
+    PAPERS.preprints.forEach(function (p) { pre.appendChild(renderPreprint(p)); });
+    var pub = document.getElementById("publications");
+    PAPERS.publications.forEach(function (p) { pub.appendChild(renderPublication(p)); });
+  })();
+</script>
 
 
 
