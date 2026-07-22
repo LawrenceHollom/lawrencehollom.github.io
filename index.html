@@ -1,30 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
   <meta name="google-site-verification" content="r2VSae4hNFSuNDQABTdXuriBuC_w9LYAu8WO2KKEepc" />
   <title>Lawrence Hollom</title>
 </head>
 <body>
-<img src="me.jpg" alt="it is a picture of me" style="float:right;width:30%"> 
-<h1>Lawrence Hollom</h1>
-<b>lawrence.hollom@epfl.ch</b><br />
-<a href="https://scholar.google.com/citations?user=PabtgaQAAAAJ&hl=en">Google Scholar</a><br />
-<a href="https://arxiv.org/a/hollom_l_1.html">arXiv</a><br />
-<a href="cv.pdf">CV</a>
+<div class="wrap">
+  <header>
+    <img class="photo" src="me.jpg" alt="Lawrence Hollom">
+    <div>
+      <h1>Lawrence Hollom</h1>
+      <p class="role">Postdoctoral researcher, EPFL</p>
+      <p class="links">
+        <a href="mailto:lawrence.hollom@epfl.ch">lawrence.hollom@epfl.ch</a><br>
+        <a href="https://scholar.google.com/citations?user=PabtgaQAAAAJ&hl=en">Google Scholar</a>
+        <span>·</span><a href="https://arxiv.org/a/hollom_l_1.html">arXiv</a>
+        <span>·</span><a href="cv.pdf">CV</a>
+      </p>
+    </div>
+  </header>
 
-<p />I am a postdoc at EPFL, working with Marius Tiba.
-I recently completed my PhD at the University of Cambridge, supervised by Be&#769la Bolloba&#769s.
-My research interests cover a range of extremal, probabilistic, infinitary, and geometric combinatorics.
+  <p class="bio">I am a postdoc at EPFL, working with Marius Tiba. I recently completed my PhD
+  at the University of Cambridge, supervised by B&eacute;la Bollob&aacute;s. My research interests
+  cover a range of extremal, probabilistic, infinitary, and geometric combinatorics.</p>
 
-<!--
-  -  Papers are stored in papers.js -- edit that file to add or update papers.
---->
+  <p>The following list of papers is loaded with javascript, so if it's empty that's probably the issue.</p>
 
-<h2>Preprints</h2>
-<ul id="preprints"></ul>
-<h2>Publications</h2>
-<ul id="publications"></ul>
+  <!--
+    -  Papers are stored in papers.js -- edit that file to add or update papers.
+  --->
+
+  <h2>Preprints</h2>
+  <ul id="preprints"></ul>
+  <h2>Publications</h2>
+  <ul id="publications"></ul>
+
+  <footer>Last updated July 2026.</footer>
+</div>
 
 <script src="papers.js"></script>
 <script>
@@ -36,63 +51,37 @@ My research interests cover a range of extremal, probabilistic, infinitary, and 
     return names.slice(0, -1).join(", ") + ", and " + names[names.length - 1];
   }
 
-  function makeLink(paper) {
+  function renderPaper(paper, isPublication) {
+    var li = document.createElement("li");
+
     var a = document.createElement("a");
     a.href = paper.url;
     a.textContent = paper.title;
-    return a;
-  }
-
-  // Preprints: title, then "<year>. With <authors>. <publication>."
-  function renderPreprint(paper) {
-    var li = document.createElement("li");
-    li.appendChild(makeLink(paper));
+    li.appendChild(a);
     li.appendChild(document.createTextNode("."));
-    li.appendChild(document.createElement("br"));
 
-    var line = paper.date + ".";
+    var meta = document.createElement("span");
+    meta.className = "meta";
+    var parts = [];
     if (paper.collaborators && paper.collaborators.length) {
-      line += " With " + formatAuthors(paper.collaborators) + ".";
+      parts.push("With " + formatAuthors(paper.collaborators));
     }
-    if (paper.publication) {
-      line += " " + paper.publication + ".";
+    if (isPublication) {
+      parts.push(paper.publication ? paper.publication + ", " + paper.date : paper.date);
+    } else {
+      parts.push(paper.date + (paper.publication ? ". " + paper.publication : ""));
     }
-    li.appendChild(document.createTextNode(line));
-    return li;
-  }
-
-  // Publications: title, then "With <authors>." then "<venue>, <year>."
-  function renderPublication(paper) {
-    var li = document.createElement("li");
-    li.appendChild(makeLink(paper));
-    li.appendChild(document.createTextNode("."));
-    li.appendChild(document.createElement("br"));
-
-    if (paper.collaborators && paper.collaborators.length) {
-      li.appendChild(document.createTextNode("With " + formatAuthors(paper.collaborators) + "."));
-      li.appendChild(document.createElement("br"));
-    }
-    var venue = paper.publication ? paper.publication + ", " + paper.date + "." : paper.date + ".";
-    li.appendChild(document.createTextNode(venue));
-    li.appendChild(document.createElement("br"));
+    meta.textContent = parts.join(". ") + ".";
+    li.appendChild(meta);
     return li;
   }
 
   (function () {
     var pre = document.getElementById("preprints");
-    PAPERS.preprints.forEach(function (p) { pre.appendChild(renderPreprint(p)); });
+    PAPERS.preprints.forEach(function (p) { pre.appendChild(renderPaper(p, false)); });
     var pub = document.getElementById("publications");
-    PAPERS.publications.forEach(function (p) { pub.appendChild(renderPublication(p)); });
+    PAPERS.publications.forEach(function (p) { pub.appendChild(renderPaper(p, true)); });
   })();
 </script>
-
-
-
-Last updated June 2026.
-
-
-
-
-
 </body>
 </html>
