@@ -49,6 +49,7 @@ li{margin:0 0 20px;}
 li a{color:var(--ink);text-decoration:none;font-weight:600;border-bottom:1px solid var(--rule);}
 li a:hover{border-bottom-color:var(--ink);}
 .meta{color:var(--muted);font-size:.95rem;display:block;margin-top:2px;}
+li a .katex{font-size:1em;}
 footer{margin-top:56px;color:var(--muted);font-size:.85rem;font-style:italic;
   border-top:1px solid var(--rule);padding-top:18px;}
 @media(max-width:560px){

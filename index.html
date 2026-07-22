@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.js"></script>
   <meta name="google-site-verification" content="r2VSae4hNFSuNDQABTdXuriBuC_w9LYAu8WO2KKEepc" />
   <title>Lawrence Hollom</title>
 </head>
@@ -29,6 +31,10 @@
 
   <p>The following list of papers is loaded with javascript, so if it's empty that's probably the issue.</p>
 
+	<!--
+	To put an equation in the text, some js magic is needed. Probably best to just avoid.
+	-->
+
   <!--
     -  Papers are stored in papers.js -- edit that file to add or update papers.
   --->
@@ -51,12 +57,31 @@
     return names.slice(0, -1).join(", ") + ", and " + names[names.length - 1];
   }
 
+  // Split a title on $...$ segments and render the math parts with KaTeX,
+  // appending the resulting nodes to `container`.
+  function appendTitleWithMath(container, title) {
+    var parts = title.split(/(\$[^$]*\$)/g);
+    parts.forEach(function (part) {
+      if (part.charAt(0) === "$" && part.charAt(part.length - 1) === "$" && part.length > 1) {
+        var span = document.createElement("span");
+        try {
+          katex.render(part.slice(1, -1), span, { throwOnError: false });
+        } catch (e) {
+          span.textContent = part;
+        }
+        container.appendChild(span);
+      } else if (part) {
+        container.appendChild(document.createTextNode(part));
+      }
+    });
+  }
+
   function renderPaper(paper, isPublication) {
     var li = document.createElement("li");
 
     var a = document.createElement("a");
     a.href = paper.url;
-    a.textContent = paper.title;
+    appendTitleWithMath(a, paper.title);
     li.appendChild(a);
     li.appendChild(document.createTextNode("."));
 
