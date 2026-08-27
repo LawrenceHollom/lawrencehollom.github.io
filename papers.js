@@ -29,6 +29,13 @@ const PAPERS = {
 
   preprints: [
     {
+      url: "https://arxiv.org/abs/2607.02500",
+      title: "The structure of FAC posets and the Aharoni--Korman conjecture",
+      date: 2026,
+	  notes: [
+	  ]
+    },
+    {
       url: "https://arxiv.org/abs/2605.20184",
       title: "Hypercube geodesics with few colour changes",
       date: 2026,
@@ -74,6 +81,9 @@ const PAPERS = {
       title: "The Aharoni--Korman conjecture is false",
       date: 2025,
       publication: "Israel Journal of Mathematics, accepted",
+	  notes: [
+		{ name: "Lean verification", url: "https://github.com/b-mehta/AharoniKorman" }
+	  ]
     },
     {
       url: "https://arxiv.org/abs/2412.04170",
@@ -103,12 +113,18 @@ const PAPERS = {
       date: 2026,
       collaborators: ["B. Randall Shaw"],
       publication: "Electronic Journal of Combinatorics",
+	  notes: [
+		{ name: "arXiv", url: "https://arxiv.org/abs/2511.13709" },
+	  ],
     },
     {
       url: "http://dx.doi.org/10.1002/rsa.70070",
-      title: "Finding a long cycle in a percolated vertex expander graph",
+      title: "Finding long cycles in a percolated expander graph",
       date: 2026,
       publication: "Random Structures & Algorithms",
+	  notes: [
+		{ name: "arXiv", url: "https://arxiv.org/abs/2506.12162" },
+	  ],
     },
     {
       url: "https://doi.org/10.1112/jlms.70539",
@@ -116,30 +132,46 @@ const PAPERS = {
       date: 2026,
       collaborators: ["J. Portier", "V. Souza"],
       publication: "Journal of the London Mathematical Society",
+	  notes: [
+		{ name: "arXiv", url: "https://arxiv.org/abs/2503.24202" },
+	  ],
     },
     {
       url: "https://www.combinatorics.org/ojs/index.php/eljc/article/view/v32i4p50",
       title: "A uniform bound on almost colour-balanced perfect matchings in colour-balanced complete graphs",
       date: 2025,
       publication: "Electronic Journal of Combinatorics",
+	  notes: [
+		{ name: "arXiv", url: "https://arxiv.org/abs/2410.07993" },
+	  ],
     },
     {
       url: "https://www.sciencedirect.com/science/article/pii/S0195669825000733",
       title: "The bunkbed conjecture is not robust to generalisation",
       date: 2025,
       publication: "European Journal of Combinatorics",
+	  notes: [
+		{ name: "Quanta", url: "https://www.quantamagazine.org/maths-bunkbed-conjecture-has-been-debunked-20241101/" },
+		{ name: "arXiv", url: "https://arxiv.org/abs/2406.01790" },
+	  ],
     },
     {
       url: "https://www.sciencedirect.com/science/article/pii/S0012365X24004023",
       title: "On graphs with maximum difference between game chromatic number and chromatic number",
       date: 2025,
       publication: "Discrete Mathematics",
+	  notes: [
+		{ name: "arXiv", url: "https://arxiv.org/abs/2309.01583" },
+	  ],
     },
     {
       url: "https://www.sciencedirect.com/science/article/pii/S0166218X24000209",
       title: "On monotonicity in Maker-Breaker graph colouring games",
       date: 2024,
       publication: "Discrete Applied Mathematics",
+	  notes: [
+		{ name: "arXiv", url: "https://arxiv.org/abs/2308.03528" },
+	  ],
     },
     {
       url: "https://onlinelibrary.wiley.com/doi/10.1002/rsa.70024",
@@ -147,6 +179,9 @@ const PAPERS = {
       date: 2025,
       collaborators: ["J. Portier"],
       publication: "Random Structures & Algorithms",
+	  notes: [
+		{ name: "arXiv", url: "https://arxiv.org/abs/2306.07811" },
+	  ],
     },
     {
       url: "https://www.sciencedirect.com/science/article/pii/S0195669824000416",
@@ -154,12 +189,18 @@ const PAPERS = {
       date: 2024,
       collaborators: ["M. Axenovich", "A. Girão", "J. Portier", "E. Powierski", "M. Savery", "Y. Tamitegama", "L. Versteegen"],
       publication: "European Journal of Combinatorics",
+	  notes: [
+		{ name: "arXiv", url: "https://arxiv.org/abs/2303.04782" },
+	  ],
     },
     {
       url: "https://www.sciencedirect.com/science/article/pii/S0012365X23003977",
       title: "A new proof of the bunkbed conjecture in the $p\\uparrow 1$ limit",
       date: 2024,
       publication: "Discrete Mathematics",
+	  notes: [
+		{ name: "arXiv", url: "https://arxiv.org/abs/2302.00031" },
+	  ],
     },
   ],
 

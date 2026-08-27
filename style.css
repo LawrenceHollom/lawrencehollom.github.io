@@ -49,7 +49,7 @@ li{margin:0 0 20px;}
 li a{color:var(--ink);text-decoration:none;font-weight:600;border-bottom:1px solid var(--rule);}
 li a:hover{border-bottom-color:var(--ink);}
 .meta{color:var(--muted);font-size:.95rem;display:block;margin-top:2px;}
-.notes{color:var(--muted);font-size:.95rem;display:block;margin-top:-4px;}
+.notes{color:var(--muted);font-size:.95rem;display:block;margin-top:-2px;}
 li .note-link{font-weight:400;color:var(--link);border-bottom-color:transparent;}
 li .note-link:hover{border-bottom-color:var(--link);}
 li a .katex{font-size:1em;}
