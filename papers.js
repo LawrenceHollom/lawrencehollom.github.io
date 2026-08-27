@@ -17,6 +17,7 @@
  *                               - For a publication, just the venue name, e.g.
  *                                 "Electronic Journal of Combinatorics"
  *                                 (the year is added automatically from `date`).
+ *    notes         (optional)  Array of links, each with a `name` and `url`.
  *
  *  There are two lists below: `preprints` and `publications`.
  *  To add a paper, copy an existing entry, edit the fields, and put it in the
@@ -31,6 +32,10 @@ const PAPERS = {
       url: "https://arxiv.org/abs/2605.20184",
       title: "Hypercube geodesics with few colour changes",
       date: 2026,
+	  notes: [
+		{ name: "Lean verification", url: "https://github.com/LawrenceHollom/lean-norine/tree/main" },
+		{ name: "Annotated paper", url: "pdfs/norine-annotated.pdf" },
+	  ]
     },
     {
       url: "https://arxiv.org/abs/2601.18789",
@@ -55,6 +60,7 @@ const PAPERS = {
       title: "Approximate Itai-Zehavi conjecture for random graphs",
       date: 2025,
       collaborators: ["L. Lichev", "A. Mond", "J. Portier", "Y. Wang"],
+	  publication: "Random Structures & Algorithms, accepted"
     },
     {
       url: "https://arxiv.org/abs/2505.22875",

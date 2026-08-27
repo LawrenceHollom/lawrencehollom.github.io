@@ -20,7 +20,7 @@
         <a href="mailto:lawrence.hollom@epfl.ch">lawrence.hollom@epfl.ch</a><br>
         <a href="https://scholar.google.com/citations?user=PabtgaQAAAAJ&hl=en">Google Scholar</a>
         <span>·</span><a href="https://arxiv.org/a/hollom_l_1.html">arXiv</a>
-        <span>·</span><a href="cv.pdf">CV</a>
+        <span>·</span><a href="pdfs/cv.pdf">CV</a>
       </p>
     </div>
   </header>
@@ -28,6 +28,8 @@
   <p class="bio">I am a postdoc at EPFL, working with Marius Tiba. I recently completed my PhD
   at the University of Cambridge, supervised by B&eacute;la Bollob&aacute;s. My research interests
   cover a range of extremal, probabilistic, infinitary, and geometric combinatorics.</p>
+
+  <p>Some papers have been verified in Lean and some have "annotated" versions (which are attempts to make the papers easier to read by a human); see the links in the following section for these.</p>
 
   <p>The following list of papers is loaded with javascript, so if it's empty that's probably the issue.</p>
 
@@ -98,6 +100,21 @@
     }
     meta.textContent = parts.join(". ") + ".";
     li.appendChild(meta);
+
+    if (paper.notes && paper.notes.length) {
+      var notes = document.createElement("div");
+      notes.className = "notes";
+      notes.appendChild(document.createTextNode(""));
+      paper.notes.forEach(function (note, index) {
+        if (index > 0) notes.appendChild(document.createTextNode(" | "));
+        var noteLink = document.createElement("a");
+        noteLink.className = "note-link";
+        noteLink.href = note.url;
+        noteLink.textContent = note.name;
+        notes.appendChild(noteLink);
+      });
+      li.appendChild(notes);
+    }
     return li;
   }
 
