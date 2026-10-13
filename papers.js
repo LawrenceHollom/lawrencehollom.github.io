@@ -30,7 +30,7 @@ const PAPERS = {
   preprints: [
     {
       url: "https://arxiv.org/abs/2607.02500",
-      title: "The structure of FAC posets and the Aharoni--Korman conjecture",
+      title: "The structure of FAC posets and the Aharoni–Korman conjecture",
       date: 2026,
 	  notes: [
 	  ]
@@ -52,45 +52,18 @@ const PAPERS = {
     },
     {
       url: "https://arxiv.org/abs/2510.05044",
-      title: "Reverse Littlewood--Offord problems with parity conditions",
+      title: "Reverse Littlewood–Offord problems with parity conditions",
       date: 2025,
       collaborators: ["G. B. Sorkin"],
+	  notes: [
+		{name: "Lean verification", url: "https://github.com/LawrenceHollom/lean-vector-balancing" },
+	  ]
     },
     {
       url: "https://arxiv.org/abs/2508.15698",
       title: "Connecting hypercube 1-factors",
       date: 2025,
       collaborators: ["B. Randall Shaw"],
-    },
-    {
-      url: "https://arxiv.org/abs/2506.23970",
-      title: "Approximate Itai-Zehavi conjecture for random graphs",
-      date: 2025,
-      collaborators: ["L. Lichev", "A. Mond", "J. Portier", "Y. Wang"],
-	  publication: "Random Structures & Algorithms, accepted"
-    },
-    {
-      url: "https://arxiv.org/abs/2505.22875",
-      title: "Monotonicity and decompositions of random regular graphs",
-      date: 2025,
-      collaborators: ["L. Lichev", "A. Mond", "J. Portier", "Y. Wang"],
-      publication: "Annals of Applied Probability, accepted",
-    },
-    {
-      url: "https://arxiv.org/abs/2411.16844",
-      title: "The Aharoni--Korman conjecture is false",
-      date: 2025,
-      publication: "Israel Journal of Mathematics, accepted",
-	  notes: [
-		{ name: "Lean verification", url: "https://github.com/b-mehta/AharoniKorman" }
-	  ]
-    },
-    {
-      url: "https://arxiv.org/abs/2412.04170",
-      title: "A note on high-dimensional discrepancy of subtrees",
-      date: 2024,
-      collaborators: ["L. Lichev", "A. Mond", "J. Portier"],
-      publication: "Discrete & Computational Geometry, accepted",
     },
     {
       url: "https://arxiv.org/abs/2410.17034",
@@ -107,6 +80,46 @@ const PAPERS = {
   ],
 
   publications: [
+    {
+      url: "http://dx.doi.org/10.1002/rsa.70095",
+      title: "Approximate Itai-Zehavi conjecture for random graphs",
+      date: 2026,
+      collaborators: ["L. Lichev", "A. Mond", "J. Portier", "Y. Wang"],
+	  publication: "Random Structures & Algorithms",
+	  notes: [
+		{ name: "arXiv", url: "https://arxiv.org/abs/2506.23970" },
+	  ],
+    },
+    {
+      url: "https://projecteuclid.org/journals/annals-of-applied-probability/volume-36/issue-5/Monotonicity-and-decompositions-of-random-regular-graphs/10.1214/26-AAP2345.full",
+      title: "Monotonicity and decompositions of random regular graphs",
+      date: 2026,
+      collaborators: ["L. Lichev", "A. Mond", "J. Portier", "Y. Wang"],
+      publication: "Annals of Applied Probability",
+	  notes: [
+		{ name: "arXiv", url: "https://arxiv.org/abs/2505.22875" },
+	  ],
+    },
+    {
+      url: "https://link.springer.com/article/10.1007/s11856-026-2940-5",
+      title: "The Aharoni–Korman conjecture is false",
+      date: 2026,
+      publication: "Israel Journal of Mathematics",
+	  notes: [
+		{ name: "arXiv", url: "https://arxiv.org/abs/2411.16844" },
+		{ name: "Lean verification", url: "https://github.com/b-mehta/AharoniKorman" }
+	  ]
+    },
+    {
+      url: "https://link.springer.com/article/10.1007/s00454-025-00790-x",
+      title: "A note on high-dimensional discrepancy of subtrees",
+      date: 2026,
+      collaborators: ["L. Lichev", "A. Mond", "J. Portier"],
+      publication: "Discrete & Computational Geometry",
+	  notes: [
+		{ name: "arXiv", url: "https://arxiv.org/abs/2412.04170" },
+	  ],
+    },
     {
       url: "https://www.combinatorics.org/ojs/index.php/eljc/article/view/v33i2p11",
       title: "Counterexamples to conjectures on strong maximality and minimality",
@@ -128,7 +141,7 @@ const PAPERS = {
     },
     {
       url: "https://doi.org/10.1112/jlms.70539",
-      title: "Double-jump phase transition for the reverse Littlewood--Offord problem",
+      title: "Double-jump phase transition for the reverse Littlewood–Offord problem",
       date: 2026,
       collaborators: ["J. Portier", "V. Souza"],
       publication: "Journal of the London Mathematical Society",
