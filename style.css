@@ -1,14 +1,14 @@
 :root{
   --ink:#1a1a1a;
-  --muted:#555;
+  --muted:#1a1a1a;
   --rule:#d8d3c8;
-  --link:#7a1f1f;
-  --paper:#fbfaf7;
+  --link:#9c0909;
+  --paper:#ffffff;
 }
 *{box-sizing:border-box;}
 html{-webkit-text-size-adjust:100%;}
 body{
-  font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  font-family: Arial, Helvetica, sans-serif;
   color:var(--ink);
   background:var(--paper);
   line-height:1.6;
@@ -29,7 +29,7 @@ header .photo{
 h1{
   font-size:2.15rem;font-weight:600;margin:0 0 6px;letter-spacing:.2px;
 }
-.role{color:var(--muted);font-style:italic;margin:0 0 14px;font-size:1.05rem;}
+.role{color:var(--muted);margin:0 0 14px;font-size:1.05rem;}
 .links a{
   color:var(--link);text-decoration:none;
   border-bottom:1px solid transparent;
@@ -39,8 +39,8 @@ h1{
 .links span{color:var(--rule);margin:0 8px;}
 .bio{margin:0 0 8px;}
 h2{
-  font-size:1.02rem;font-weight:600;text-transform:uppercase;
-  letter-spacing:1.5px;color:var(--muted);
+  font-size:1.2rem;font-weight:600;text-transform:uppercase;
+  /* letter-spacing:1.5px;color:var(--muted); */
   border-bottom:1px solid var(--rule);
   padding-bottom:6px;margin:44px 0 18px;
 }
